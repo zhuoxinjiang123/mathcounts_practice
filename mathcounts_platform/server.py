@@ -1,4 +1,5 @@
 import argparse
+import json
 import sqlite3
 from http import cookies
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -155,7 +156,8 @@ class MathcountsHandler(BaseHTTPRequestHandler):
             if attempt is None:
                 self._send_html("Attempt not found", status=404)
                 return
-            self._send_html(render_results_page(user, attempt, get_attempt_answers(conn, attempt_id)))
+            attempt, results = load_attempt_results(conn, user["id"], attempt_id)
+            self._send_html(render_results_page(user, attempt, results))
 
     def _post_register(self, parsed):
         form = self._read_form()
@@ -285,6 +287,23 @@ def save_graded_attempt(conn, user_id, year, round_name, submitted_answers, grad
         grade["score"],
         grade["max_score"],
     )
+
+
+def load_attempt_results(conn, user_id, attempt_id):
+    attempt = get_attempt(conn, user_id, attempt_id)
+    if attempt is None:
+        return None, []
+
+    answer_keys = get_answer_keys(conn, attempt["year"], attempt["round"])
+    if is_answer_key_complete(attempt["round"], answer_keys):
+        submitted_answers = json.loads(attempt["submitted_answers_json"])
+        grade = grade_answers(answer_keys, submitted_answers)
+        current_attempt = dict(attempt)
+        current_attempt["score"] = grade["score"]
+        current_attempt["max_score"] = grade["max_score"]
+        return current_attempt, grade["results"]
+
+    return attempt, get_attempt_answers(conn, attempt_id)
 
 
 def main():
