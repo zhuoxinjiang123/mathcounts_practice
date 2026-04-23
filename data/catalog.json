@@ -1,5 +1,208 @@
 [
   {
+    "year": 2025,
+    "resources": [
+      {
+        "label": "Sprint",
+        "url": "/past_paper/862387065-State-Results-Document-3.pdf#page=11",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Target",
+        "url": "/past_paper/862387065-State-Results-Document-3.pdf#page=18",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Team",
+        "url": "/past_paper/862387065-State-Results-Document-3.pdf#page=23",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Answers",
+        "url": "/past_paper/862387065-State-Results-Document-3.pdf#page=9",
+        "kind": "reference",
+        "gradable": false
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "resources": [
+      {
+        "label": "Sprint",
+        "url": "/past_paper/779676402-2024-Mathcounts-Nationals-State-Results-Document.pdf#page=11",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Target",
+        "url": "/past_paper/779676402-2024-Mathcounts-Nationals-State-Results-Document.pdf#page=18",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Team",
+        "url": "/past_paper/779676402-2024-Mathcounts-Nationals-State-Results-Document.pdf#page=23",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Answers",
+        "url": "/past_paper/779676402-2024-Mathcounts-Nationals-State-Results-Document.pdf#page=9",
+        "kind": "reference",
+        "gradable": false
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "resources": [
+      {
+        "label": "Sprint",
+        "url": "/past_paper/736718802-2023-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1-1.pdf#page=9",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Target",
+        "url": "/past_paper/736718802-2023-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1-1.pdf#page=16",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Team",
+        "url": "/past_paper/736718802-2023-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1-1.pdf#page=21",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Answers",
+        "url": "/past_paper/736718802-2023-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1-1.pdf#page=7",
+        "kind": "reference",
+        "gradable": false
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "resources": [
+      {
+        "label": "Sprint",
+        "url": "/past_paper/736718800-2022-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=9",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Target",
+        "url": "/past_paper/736718800-2022-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=16",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Team",
+        "url": "/past_paper/736718800-2022-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=21",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Answers",
+        "url": "/past_paper/736718800-2022-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=7",
+        "kind": "reference",
+        "gradable": false
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "resources": [
+      {
+        "label": "Sprint",
+        "url": "/past_paper/736718798-2021-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=11",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Target",
+        "url": "/past_paper/736718798-2021-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=18",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Team",
+        "url": "/past_paper/736718798-2021-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=23",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Answers",
+        "url": "/past_paper/736718798-2021-MATHCOUNTS-National-Competition-Results-Answer-Booklet-1.pdf#page=9",
+        "kind": "reference",
+        "gradable": false
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "resources": [
+      {
+        "label": "Sprint",
+        "url": "/past_paper/733984499-2019-MATHCOUNTS-National-Competition.pdf#page=11",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Target",
+        "url": "/past_paper/733984499-2019-MATHCOUNTS-National-Competition.pdf#page=18",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Team",
+        "url": "/past_paper/733984499-2019-MATHCOUNTS-National-Competition.pdf#page=23",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Answers",
+        "url": "/past_paper/733984499-2019-MATHCOUNTS-National-Competition.pdf#page=9",
+        "kind": "reference",
+        "gradable": false
+      }
+    ]
+  },
+  {
+    "year": 2018,
+    "resources": [
+      {
+        "label": "Sprint",
+        "url": "/past_paper/733985250-MC-National-2018.pdf#page=11",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Target",
+        "url": "/past_paper/733985250-MC-National-2018.pdf#page=18",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Team",
+        "url": "/past_paper/733985250-MC-National-2018.pdf#page=23",
+        "kind": "paper",
+        "gradable": true
+      },
+      {
+        "label": "Answers",
+        "url": "/past_paper/733985250-MC-National-2018.pdf#page=9",
+        "kind": "reference",
+        "gradable": false
+      }
+    ]
+  },
+  {
     "year": 2017,
     "resources": [
       {

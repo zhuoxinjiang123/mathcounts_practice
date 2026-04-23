@@ -2,6 +2,8 @@
 
 A dependency-light Python web platform for practicing MATHCOUNTS National
 rounds, grading structured answer submissions, and storing attempt history.
+The catalog includes remote archive links for 2000-2017 and local PDFs for
+2018, 2019, 2021, 2022, 2023, 2024, and 2025.
 
 ## Setup
 

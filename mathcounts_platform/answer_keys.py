@@ -17,8 +17,8 @@ def parse_answer_key_csv(csv_text):
     rows = []
     for line_number, row in enumerate(reader, start=2):
         year = _positive_int(row.get("year"), "year", line_number)
-        if year < 2000 or year > 2017:
-            raise ValueError(f"Line {line_number}: year must be between 2000 and 2017")
+        if year < 2000 or year > 2025:
+            raise ValueError(f"Line {line_number}: year must be between 2000 and 2025")
 
         round_name = (row.get("round") or "").strip()
         if round_name not in VALID_ROUNDS:

@@ -19,3 +19,10 @@ class AnswerKeyImportTest(unittest.TestCase):
         sprint_keys = get_answer_keys(self.conn, 2017, "Sprint")
         self.assertEqual(sprint_keys[0]["answer"], "42")
         self.assertEqual(sprint_keys[0]["points"], 1)
+
+    def test_parse_recent_national_answer_key_years(self):
+        csv_text = "year,round,question_number,answer,points\n2025,Sprint,1,24,1\n"
+
+        rows = parse_answer_key_csv(csv_text)
+
+        self.assertEqual(rows[0]["year"], 2025)

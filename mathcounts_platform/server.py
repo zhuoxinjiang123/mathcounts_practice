@@ -4,7 +4,7 @@ import sqlite3
 from http import cookies
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 from mathcounts_platform.auth import create_session, hash_password, verify_password
 from mathcounts_platform.db import (
@@ -35,6 +35,7 @@ from mathcounts_platform.views import (
 
 DEFAULT_DB_PATH = Path("data/app.sqlite3")
 STATIC_DIR = Path("static")
+PAST_PAPER_DIR = Path("past_paper")
 SESSION_COOKIE = "mathcounts_session"
 
 
@@ -61,6 +62,9 @@ class MathcountsHandler(BaseHTTPRequestHandler):
         }
         if parsed.path.startswith("/static/"):
             self._serve_static(parsed.path)
+            return
+        if parsed.path.startswith("/past_paper/"):
+            self._serve_past_paper(parsed.path)
             return
         handler = routes.get(parsed.path)
         if handler is None:
@@ -238,14 +242,25 @@ class MathcountsHandler(BaseHTTPRequestHandler):
     def _serve_static(self, path):
         relative = path.removeprefix("/static/")
         static_path = STATIC_DIR / relative
-        if not static_path.is_file():
+        self._serve_file(static_path)
+
+    def _serve_past_paper(self, path):
+        relative = unquote(path.removeprefix("/past_paper/"))
+        paper_path = safe_child_path(PAST_PAPER_DIR, relative)
+        if paper_path is None:
             self._send_html("Not found", status=404)
             return
-        content_type = "text/css" if static_path.suffix == ".css" else "application/javascript"
+        self._serve_file(paper_path)
+
+    def _serve_file(self, file_path):
+        if not file_path.is_file():
+            self._send_html("Not found", status=404)
+            return
+        content_type = content_type_for_path(file_path)
         self.send_response(200)
         self.send_header("Content-Type", f"{content_type}; charset=utf-8")
         self.end_headers()
-        self.wfile.write(static_path.read_bytes())
+        self.wfile.write(file_path.read_bytes())
 
     def _send_html(self, html, status=200):
         payload = html.encode("utf-8")
@@ -304,6 +319,23 @@ def load_attempt_results(conn, user_id, attempt_id):
         return current_attempt, grade["results"]
 
     return attempt, get_attempt_answers(conn, attempt_id)
+
+
+def content_type_for_path(path):
+    suffix = Path(path).suffix.lower()
+    return {
+        ".css": "text/css",
+        ".js": "application/javascript",
+        ".pdf": "application/pdf",
+    }.get(suffix, "application/octet-stream")
+
+
+def safe_child_path(root, relative_path):
+    root_path = Path(root).resolve()
+    child_path = (root_path / relative_path).resolve()
+    if child_path == root_path or root_path not in child_path.parents:
+        return None
+    return child_path
 
 
 def main():
