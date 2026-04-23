@@ -6,7 +6,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 
-from mathcounts_platform.auth import create_session, hash_password, verify_password
+from mathcounts_platform.auth import create_password_reset_token, create_session, hash_password, verify_password
 from mathcounts_platform.db import (
     create_attempt,
     create_user,
@@ -17,17 +17,22 @@ from mathcounts_platform.db import (
     get_gradable_resource,
     get_reference_resources,
     get_user_by_email,
+    get_user_for_password_reset_token,
     get_user_for_session,
     get_years,
+    mark_password_reset_token_used,
     migrate,
+    update_user_password,
 )
 from mathcounts_platform.grading import grade_answers
 from mathcounts_platform.rounds import is_answer_key_complete
 from mathcounts_platform.views import (
     render_dashboard_page,
+    render_forgot_password_page,
     render_history_page,
     render_login_page,
     render_register_page,
+    render_reset_password_page,
     render_results_page,
     render_test_page,
 )
@@ -55,6 +60,8 @@ class MathcountsHandler(BaseHTTPRequestHandler):
             "/": self._get_home,
             "/login": self._get_login,
             "/register": self._get_register,
+            "/forgot-password": self._get_forgot_password,
+            "/reset-password": self._get_reset_password,
             "/dashboard": self._get_dashboard,
             "/results": self._get_results,
             "/test": self._get_test,
@@ -77,6 +84,8 @@ class MathcountsHandler(BaseHTTPRequestHandler):
         routes = {
             "/login": self._post_login,
             "/register": self._post_register,
+            "/forgot-password": self._post_forgot_password,
+            "/reset-password": self._post_reset_password,
             "/logout": self._post_logout,
             "/submit-attempt": self._post_submit_attempt,
         }
@@ -97,6 +106,21 @@ class MathcountsHandler(BaseHTTPRequestHandler):
 
     def _get_register(self, parsed):
         self._send_html(render_register_page())
+
+    def _get_forgot_password(self, parsed):
+        self._send_html(render_forgot_password_page())
+
+    def _get_reset_password(self, parsed):
+        query = parse_qs(parsed.query)
+        token = query.get("token", [""])[0]
+        with connect(self.db_path) as conn:
+            if not token or get_user_for_password_reset_token(conn, token) is None:
+                self._send_html(
+                    render_reset_password_page(error="This reset link is invalid or expired."),
+                    status=400,
+                )
+                return
+        self._send_html(render_reset_password_page(token))
 
     def _get_dashboard(self, parsed):
         user = self._require_user()
@@ -189,6 +213,44 @@ class MathcountsHandler(BaseHTTPRequestHandler):
                 return
             token = create_session(conn, user["id"])
         self._redirect("/dashboard", cookie=self._session_cookie(token))
+
+    def _post_forgot_password(self, parsed):
+        form = self._read_form()
+        email = form.get("email", "").strip().casefold()
+        reset_link = None
+        with connect(self.db_path) as conn:
+            user = get_user_by_email(conn, email)
+            if user:
+                token = create_password_reset_token(conn, user["id"])
+                reset_link = f"/reset-password?token={token}"
+        self._send_html(
+            render_forgot_password_page(
+                message="If that account exists, a reset link has been created.",
+                reset_link=reset_link,
+            )
+        )
+
+    def _post_reset_password(self, parsed):
+        form = self._read_form()
+        token = form.get("token", "")
+        password = form.get("password", "")
+        if len(password) < 8:
+            self._send_html(
+                render_reset_password_page(token, "Use a password with at least 8 characters."),
+                status=400,
+            )
+            return
+        with connect(self.db_path) as conn:
+            user = get_user_for_password_reset_token(conn, token)
+            if user is None:
+                self._send_html(
+                    render_reset_password_page(error="This reset link is invalid or expired."),
+                    status=400,
+                )
+                return
+            update_user_password(conn, user["id"], hash_password(password))
+            mark_password_reset_token_used(conn, token)
+        self._send_html(render_login_page(message="Password reset successful. Log in with your new password."))
 
     def _post_logout(self, parsed):
         self._redirect("/login", cookie=f"{SESSION_COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0")

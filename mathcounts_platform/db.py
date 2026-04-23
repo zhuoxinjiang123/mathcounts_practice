@@ -19,6 +19,15 @@ def migrate(conn):
           created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
         );
 
+        CREATE TABLE IF NOT EXISTS password_reset_tokens (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          user_id INTEGER NOT NULL REFERENCES users(id),
+          token_hash TEXT NOT NULL UNIQUE,
+          expires_at TEXT NOT NULL,
+          used_at TEXT,
+          created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+
         CREATE TABLE IF NOT EXISTS resources (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           year INTEGER NOT NULL,
@@ -78,6 +87,14 @@ def get_user_by_email(conn, email):
         "SELECT * FROM users WHERE email = ?",
         (email,),
     ).fetchone()
+
+
+def update_user_password(conn, user_id, password_hash):
+    conn.execute(
+        "UPDATE users SET password_hash = ? WHERE id = ?",
+        (password_hash, int(user_id)),
+    )
+    conn.commit()
 
 
 def upsert_resource(conn, year, label, kind, url, gradable):
@@ -246,3 +263,33 @@ def get_user_for_session(conn, token):
         """,
         (hash_token(token),),
     ).fetchone()
+
+
+def get_user_for_password_reset_token(conn, token):
+    from mathcounts_platform.auth import hash_token
+
+    return conn.execute(
+        """
+        SELECT users.*
+        FROM users
+        JOIN password_reset_tokens ON password_reset_tokens.user_id = users.id
+        WHERE password_reset_tokens.token_hash = ?
+          AND password_reset_tokens.used_at IS NULL
+          AND password_reset_tokens.expires_at > CURRENT_TIMESTAMP
+        """,
+        (hash_token(token),),
+    ).fetchone()
+
+
+def mark_password_reset_token_used(conn, token):
+    from mathcounts_platform.auth import hash_token
+
+    conn.execute(
+        """
+        UPDATE password_reset_tokens
+        SET used_at = CURRENT_TIMESTAMP
+        WHERE token_hash = ?
+        """,
+        (hash_token(token),),
+    )
+    conn.commit()

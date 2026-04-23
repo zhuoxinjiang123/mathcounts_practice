@@ -44,21 +44,67 @@ def render_base(title, body, user=None):
 </html>"""
 
 
-def render_login_page(error=None):
+def render_login_page(error=None, message=None):
     error_html = _render_error(error)
+    message_html = _render_notice(message)
     body = f"""
     <section class="auth-card">
       <h1>Log in</h1>
       {error_html}
+      {message_html}
       <form method="post" action="/login">
         <label>Email <input type="email" name="email" required></label>
         <label>Password <input type="password" name="password" required></label>
         <button type="submit">Log in</button>
       </form>
+      <p><a href="/forgot-password">Forgot password?</a></p>
       <p>New here? <a href="/register">Create an account</a>.</p>
     </section>
     """
     return render_base("Log in", body)
+
+
+def render_forgot_password_page(message=None, reset_link=None):
+    message_html = f'<p class="notice">{escape(message)}</p>' if message else ""
+    reset_link_html = ""
+    if reset_link:
+        reset_link_html = f"""
+        <div class="reset-link-box">
+          <p>Development reset link:</p>
+          <a href="{escape(reset_link)}">{escape(reset_link)}</a>
+        </div>
+        """
+    body = f"""
+    <section class="auth-card">
+      <h1>Reset password</h1>
+      <p>Enter your account email and we will create a one-time reset link.</p>
+      {message_html}
+      {reset_link_html}
+      <form method="post" action="/forgot-password">
+        <label>Email <input type="email" name="email" required></label>
+        <button type="submit">Create reset link</button>
+      </form>
+      <p><a href="/login">Back to log in</a></p>
+    </section>
+    """
+    return render_base("Forgot password", body)
+
+
+def render_reset_password_page(token="", error=None):
+    error_html = _render_error(error)
+    body = f"""
+    <section class="auth-card">
+      <h1>Choose a new password</h1>
+      {error_html}
+      <form method="post" action="/reset-password">
+        <input type="hidden" name="token" value="{escape(token)}">
+        <label>New password <input type="password" name="password" required minlength="8"></label>
+        <button type="submit">Reset password</button>
+      </form>
+      <p><a href="/login">Back to log in</a></p>
+    </section>
+    """
+    return render_base("Reset password", body)
 
 
 def render_register_page(error=None):
@@ -187,6 +233,12 @@ def _render_error(error):
     if not error:
         return ""
     return f'<p class="error">{escape(error)}</p>'
+
+
+def _render_notice(message):
+    if not message:
+        return ""
+    return f'<p class="notice">{escape(message)}</p>'
 
 
 def _embed_url(url):

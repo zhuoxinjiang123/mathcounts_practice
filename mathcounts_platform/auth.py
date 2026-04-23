@@ -7,6 +7,7 @@ from datetime import datetime, timedelta, timezone
 PASSWORD_ALGORITHM = "pbkdf2_sha256"
 PASSWORD_ITERATIONS = 200_000
 SESSION_DAYS = 30
+PASSWORD_RESET_MINUTES = 30
 
 
 def hash_password(password):
@@ -56,7 +57,26 @@ def create_session(conn, user_id):
         INSERT INTO sessions (user_id, token_hash, expires_at)
         VALUES (?, ?, ?)
         """,
-        (int(user_id), hash_token(token), expires_at.isoformat(timespec="seconds")),
+        (int(user_id), hash_token(token), _db_timestamp(expires_at)),
     )
     conn.commit()
     return token
+
+
+def create_password_reset_token(conn, user_id, expires_at=None):
+    token = secrets.token_urlsafe(32)
+    if expires_at is None:
+        expires_at = datetime.now(timezone.utc) + timedelta(minutes=PASSWORD_RESET_MINUTES)
+    conn.execute(
+        """
+        INSERT INTO password_reset_tokens (user_id, token_hash, expires_at)
+        VALUES (?, ?, ?)
+        """,
+        (int(user_id), hash_token(token), _db_timestamp(expires_at)),
+    )
+    conn.commit()
+    return token
+
+
+def _db_timestamp(value):
+    return value.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")

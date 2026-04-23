@@ -1,6 +1,12 @@
 import unittest
 
-from mathcounts_platform.views import render_dashboard_page, render_login_page, render_test_page
+from mathcounts_platform.views import (
+    render_dashboard_page,
+    render_forgot_password_page,
+    render_login_page,
+    render_reset_password_page,
+    render_test_page,
+)
 
 
 class ViewTest(unittest.TestCase):
@@ -8,6 +14,21 @@ class ViewTest(unittest.TestCase):
         html = render_login_page(error=None)
         self.assertIn("<form", html)
         self.assertIn('name="email"', html)
+        self.assertIn('name="password"', html)
+        self.assertIn("Forgot password?", html)
+
+    def test_forgot_password_page_contains_email_form(self):
+        html = render_forgot_password_page()
+
+        self.assertIn('action="/forgot-password"', html)
+        self.assertIn('name="email"', html)
+
+    def test_reset_password_page_contains_password_form(self):
+        html = render_reset_password_page("reset-token")
+
+        self.assertIn('action="/reset-password"', html)
+        self.assertIn('name="token"', html)
+        self.assertIn('value="reset-token"', html)
         self.assertIn('name="password"', html)
 
     def test_dashboard_lists_years(self):

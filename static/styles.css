@@ -131,6 +131,19 @@ input {
   font-weight: 700;
 }
 
+.notice {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.reset-link-box {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow-wrap: anywhere;
+  padding: 14px;
+}
+
 .eyebrow {
   color: var(--accent-dark);
   font-size: 0.78rem;
