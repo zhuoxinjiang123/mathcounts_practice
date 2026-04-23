@@ -1,6 +1,6 @@
 import unittest
 
-from mathcounts_platform.grading import grade_answers, normalize_answer
+from mathcounts_platform.grading import answer_options, grade_answers, normalize_answer
 
 
 class GradingTest(unittest.TestCase):
@@ -33,3 +33,16 @@ class GradingTest(unittest.TestCase):
 
         self.assertEqual(result["score"], 2)
         self.assertEqual(result["max_score"], 3)
+
+    def test_grades_against_accepted_answer_variants_but_displays_official_answer(self):
+        keys = [
+            {"round": "Sprint", "question_number": 1, "answer": "5600 gallons||5600", "points": 1},
+        ]
+
+        result = grade_answers(keys, {"1": "5600"})
+
+        self.assertEqual(result["score"], 1)
+        self.assertEqual(result["results"][0]["correct_answer"], "5600 gallons")
+
+    def test_answer_options_ignore_blank_variants(self):
+        self.assertEqual(answer_options("A|| ||B"), ["A", "B"])
