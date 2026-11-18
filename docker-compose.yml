@@ -1,0 +1,16 @@
+services:
+  mathcounts:
+    build:
+      context: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      MATHCOUNTS_HOST: 0.0.0.0
+      PORT: "8000"
+      MATHCOUNTS_DB_PATH: /app/docker-data/app.sqlite3
+      MATHCOUNTS_CATALOG_PATH: /app/data/catalog.json
+      MATHCOUNTS_ANSWER_KEYS_PATH: /app/data/answer_keys.csv
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-chat}
+    volumes:
+      - ./docker-data:/app/docker-data

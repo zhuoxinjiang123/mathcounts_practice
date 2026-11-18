@@ -1,0 +1,337 @@
+year,round,question_number,subject,difficulty,page,summary
+2025,Sprint,1,Algebra,Easy,11,Greatest of three consecutive even integers summing to 66
+2025,Sprint,2,Geometry,Easy,11,Point with equal coordinates equidistant from two given points
+2025,Sprint,3,Geometry,Easy,11,Height of a box given volume length and width
+2025,Sprint,4,General Math,Easy,11,Day of week for October 31 given August date
+2025,Sprint,5,General Math,Easy,11,Total cost of candy mix with two prices per pound
+2025,Sprint,6,Algebra,Easy,12,Count positive integers satisfying a quadratic inequality
+2025,Sprint,7,General Math,Easy,12,Questions written by seven writers at a constant rate
+2025,Sprint,8,General Math,Easy,12,Sleep time reduced by 25 percent find earlier minutes
+2025,Sprint,9,General Math,Easy,12,Mean equals median for three integers find value difference
+2025,Sprint,10,Algebra,Easy,12,Count integers b with real a satisfying a ratio equation
+2025,Sprint,11,General Math,Medium,13,Total pints of produce using unit conversions
+2025,Sprint,12,Geometry,Medium,13,Fourth vertex of quadrilateral with perpendicular diagonals and area
+2025,Sprint,13,General Math,Medium,13,Five integers with given mean then median after sixth added
+2025,Sprint,14,Algebra,Medium,13,Sum of solutions of an exponential equation
+2025,Sprint,15,Algebra,Medium,13,Band size from freshman to sophomore attendance ratios
+2025,Sprint,16,Counting & Probability,Medium,14,Expected value of squared number of heads in four flips
+2025,Sprint,17,Counting & Probability,Medium,14,Count base-5 integers with nonzero digits summing to 7
+2025,Sprint,18,Number Theory,Medium,14,Sum of integers to 100 missing two arithmetic progressions
+2025,Sprint,19,Geometry,Medium,14,Overlap area of a square and a rotated rectangle
+2025,Sprint,20,Number Theory,Medium,14,Digit sum of smallest repdigit multiple of 121
+2025,Sprint,21,Geometry,Hard,15,Rectangle ratio with two inscribed circles in quadrilaterals
+2025,Sprint,22,Counting & Probability,Hard,15,Integers under 1000 whose digit cubes total at least 100
+2025,Sprint,23,Counting & Probability,Hard,15,Magic triangle arrangements of 0 to 5 up to symmetry
+2025,Sprint,24,Number Theory,Hard,15,Probability that LCM plus GCD equals a plus b
+2025,Sprint,25,Algebra,Hard,15,Sum of least roots of a family of quadratics
+2025,Sprint,26,Geometry,Hard,16,Segment length from circle tangent inside a square
+2025,Sprint,27,Algebra,Hard,16,Symmetric expression of quadratic roots using Vieta
+2025,Sprint,28,Counting & Probability,Hard,16,Conditional probability on random subsets then count divisors
+2025,Sprint,29,Algebra,Hard,16,Telescoping product of factorial sum ratios
+2025,Sprint,30,Counting & Probability,Hard,16,Probability of four candies from a recursive distribution
+2025,Target,1,Algebra,Easy,18,Weight system relating thingamajigs doohickeys and widgets
+2025,Target,2,Counting & Probability,Easy,18,Permutations of TRIVIA with A between the two Is
+2025,Target,3,General Math,Medium,19,Class size from group averages and overall average
+2025,Target,4,Counting & Probability,Medium,19,Probability two draws of marbles have equal red counts
+2025,Target,5,Geometry,Medium,20,Area of right triangle from median and hypotenuse
+2025,Target,6,Counting & Probability,Medium,20,Probability of winning a tennis game with deuce rules
+2025,Target,7,Number Theory,Hard,21,Two three-digit integers with given GCD and LCM
+2025,Target,8,Geometry,Hard,21,Right triangle area with circle tangent to both legs
+2025,Team,1,Algebra,Easy,23,Total stickers from fraction and transfer conditions
+2025,Team,2,Algebra,Easy,23,Floor number from distance ratio between two floors
+2025,Team,3,Number Theory,Easy,23,Least class size with losing vote rounding to 31 percent
+2025,Team,4,Counting & Probability,Medium,23,Count paths tracing every edge of a triangle trapezoid once
+2025,Team,5,Counting & Probability,Medium,23,Sum of numbers below 10000 having digit sum 3
+2025,Team,6,Counting & Probability,Medium,24,Probability four random coins total less than a dollar
+2025,Team,7,Geometry,Medium,24,Least distance BQ for inscribed rectangle in 13-14-15 triangle
+2025,Team,8,Geometry,Hard,24,Area of two congruent rectangles forming T inside circle
+2025,Team,9,Algebra,Hard,24,Evaluate a custom binary operation from functional properties
+2025,Team,10,Geometry,Hard,24,Square base area of pyramid from four face areas
+2024,Sprint,1,General Math,Easy,11,Regular pudding calories given 25 percent fewer
+2024,Sprint,2,General Math,Easy,11,Percent of family ordering one scoop from table
+2024,Sprint,3,Counting & Probability,Easy,11,Students with neither lunch item using a Venn diagram
+2024,Sprint,4,General Math,Easy,11,Mean of exam scores from a stem-and-leaf plot
+2024,Sprint,5,Geometry,Easy,11,Volume of open box folded from square cardboard
+2024,Sprint,6,Counting & Probability,Easy,12,Probability of yellow marble from complementary probabilities
+2024,Sprint,7,Geometry,Easy,12,Speed of a point on a rotating Ferris wheel
+2024,Sprint,8,Counting & Probability,Easy,12,Count referential subsets of a four-element set
+2024,Sprint,9,General Math,Easy,12,Sum of x values making mean equal median
+2024,Sprint,10,Geometry,Easy,12,Slope of line bisecting a rectangle area
+2024,Sprint,11,General Math,Medium,13,Angle between clock hands at 3:08
+2024,Sprint,12,Geometry,Medium,13,Volume of solid from rotating triangle about y-axis
+2024,Sprint,13,Algebra,Medium,13,Least n satisfying a tower exponent inequality
+2024,Sprint,14,Number Theory,Medium,13,Ordered pairs with a cubed times b squared equal 20^24
+2024,Sprint,15,Geometry,Medium,13,Diagonal AC of quadrilateral with given sides and diagonal
+2024,Sprint,16,Algebra,Medium,14,Closest integer to x from ratio of power sums
+2024,Sprint,17,Number Theory,Medium,14,Function on products defined by primes evaluated at 2023
+2024,Sprint,18,General Math,Medium,14,Self-referential true or false statements logic puzzle
+2024,Sprint,19,Algebra,Medium,14,Minimize quadratic expression with absolute value term
+2024,Sprint,20,General Math,Medium,14,Original speed from average speed with percent increases
+2024,Sprint,21,General Math,Hard,15,Nested function of digit factorial products
+2024,Sprint,22,Number Theory,Hard,15,Least volume of prism with non-integer edges integer faces
+2024,Sprint,23,Counting & Probability,Hard,15,Sum of digit products over numbers with composite digits
+2024,Sprint,24,Number Theory,Hard,15,Probability two factors of a million have GCF 100
+2024,Sprint,25,Counting & Probability,Hard,15,Expected squared distance between two random circle points
+2024,Sprint,26,Algebra,Hard,16,Infinite sum of recursive sequence over powers of 6
+2024,Sprint,27,Geometry,Hard,16,Area of regular hexagon with four vertices on parabola
+2024,Sprint,28,Counting & Probability,Hard,16,Probability three random lengths form a triangle
+2024,Sprint,29,Geometry,Hard,16,Total length of graph with absolute value circle equation
+2024,Sprint,30,Geometry,Hard,16,Inradius of tetrahedron with equilateral base
+2024,Target,1,General Math,Easy,18,Profit per item in cents from purchases and resale
+2024,Target,2,Geometry,Easy,18,Length BM in trapezoid with right angle at C
+2024,Target,3,Algebra,Medium,19,Fewest 12-point questions given total score and count
+2024,Target,4,Counting & Probability,Medium,19,Probability card shuffle contains at least one given sequence
+2024,Target,5,Counting & Probability,Medium,20,Expected number of chess games until two wins
+2024,Target,6,Number Theory,Medium,20,Remainders mod 24 for three consecutive squarefree semiprimes
+2024,Target,7,Geometry,Hard,21,Shortest path on cone surface between two base points
+2024,Target,8,Algebra,Hard,21,Value of f(f(1)) when f(f(x)) has one real root
+2024,Team,1,General Math,Easy,23,Wheel rotations per minute at a given speed
+2024,Team,2,Geometry,Easy,23,Perimeter of triangle joining edge midpoints of a cube
+2024,Team,3,Number Theory,Easy,23,Prime three-digit number with digit product twice digit sum
+2024,Team,4,Geometry,Medium,23,Perpendicular segment bisecting area of 13-14-15 triangle
+2024,Team,5,Number Theory,Medium,23,Percent of integers not divisible by 2 through 25
+2024,Team,6,Number Theory,Medium,24,Numbers to 1000 where multiples of 8 avoid digit 7
+2024,Team,7,Counting & Probability,Medium,24,Unfair die with uniform sums find probability of 12
+2024,Team,8,Geometry,Hard,24,Max area of rectilinear octagon with sides 2 to 9
+2024,Team,9,Number Theory,Hard,24,Repeated adjacent sums of triangular numbers modulo 289
+2024,Team,10,Counting & Probability,Hard,24,Place two gray cubes in 3x3x3 cube without touching
+2023,Sprint,1,General Math,Easy,9,Babysitting pay rate change find finishing time
+2023,Sprint,2,General Math,Easy,9,Percent relationships among three related quantities
+2023,Sprint,3,General Math,Easy,9,Least distance between walkers on a straight road
+2023,Sprint,4,Algebra,Easy,9,Greatest integer satisfying a linear inequality
+2023,Sprint,5,General Math,Easy,9,Day of week a given number of days later
+2023,Sprint,6,General Math,Easy,10,Departure time on a five-hour clock
+2023,Sprint,7,Algebra,Easy,10,Test with penalty for wrong answers find correct count
+2023,Sprint,8,General Math,Easy,10,Taxi fare per kilometer find distance traveled
+2023,Sprint,9,Geometry,Easy,10,Sum of lengths of segments among six grid points
+2023,Sprint,10,General Math,Easy,10,Four numbers with given mean median and mode
+2023,Sprint,11,Counting & Probability,Medium,11,Count cow and chicken combinations under a leg limit
+2023,Sprint,12,Counting & Probability,Medium,11,Pages in book from total digits used
+2023,Sprint,13,Geometry,Medium,11,Parallelogram area ratio find segment length
+2023,Sprint,14,Algebra,Medium,11,Exponent from product of nested radicals
+2023,Sprint,15,Counting & Probability,Medium,11,Probability removing two connectors splits path in two
+2023,Sprint,16,Number Theory,Medium,12,Remainder of sum of large powers divided by 13
+2023,Sprint,17,Geometry,Medium,12,Equilateral triangle inscribed in parabola find perimeter
+2023,Sprint,18,Geometry,Medium,12,Area bounded by two absolute value graphs
+2023,Sprint,19,Geometry,Medium,12,Point reflected across axes and a line
+2023,Sprint,20,Geometry,Medium,12,Area of equiangular lattice octagon with given perimeter
+2023,Sprint,21,Geometry,Hard,13,Integer right triangles with equal perimeter and area
+2023,Sprint,22,Number Theory,Hard,13,Division by power of two with quotient remainder condition
+2023,Sprint,23,Counting & Probability,Hard,13,Probability two coin tossers get equal heads
+2023,Sprint,24,Number Theory,Hard,13,Count points with an integer coordinate on 3D segment
+2023,Sprint,25,Geometry,Hard,13,Right triangle matching isosceles triangle perimeter and area
+2023,Sprint,26,Number Theory,Hard,14,Smallest prime making quadratic divisible by 167
+2023,Sprint,27,Number Theory,Hard,14,Alternating base three numbers divisible by given number
+2023,Sprint,28,Algebra,Hard,14,Simplify ratio of two long fraction sums
+2023,Sprint,29,Counting & Probability,Hard,14,Two-colorings of 4 by 4 board up to rotation
+2023,Sprint,30,Number Theory,Hard,14,Last two digits of rounded quotient of huge powers
+2023,Target,1,General Math,Easy,16,Find amount given fraction of another person's money
+2023,Target,2,General Math,Easy,16,Minimum knight moves on board with a hole
+2023,Target,3,Algebra,Medium,17,Mixed number versus product interpretation least sum
+2023,Target,4,Algebra,Medium,17,Original cord length from knotted piece measurements
+2023,Target,5,General Math,Medium,18,Maximum gap between overall mean and mean of group means
+2023,Target,6,Number Theory,Medium,18,Count integers where polynomial is not divisible by 5
+2023,Target,7,Algebra,Hard,19,Parameter minimizing distance between parabola x-intercepts
+2023,Target,8,Algebra,Hard,19,Integer triples satisfying three product and square equations
+2023,Team,1,General Math,Easy,21,Increasing digit license plate find last digit
+2023,Team,2,Geometry,Easy,21,Length of diagonal bike trail across city blocks
+2023,Team,3,Number Theory,Easy,21,Possible total charges after sales tax rounding
+2023,Team,4,Counting & Probability,Medium,21,Ways to show a time on a squares clock
+2023,Team,5,Algebra,Medium,21,Ratio of arithmetic to geometric mean find max ratio
+2023,Team,6,Algebra,Medium,22,Parabola vertex from segment length and angle
+2023,Team,7,Number Theory,Medium,22,Count integer lists satisfying chained product equations
+2023,Team,8,Geometry,Hard,22,Expected area of hexagon from random side points
+2023,Team,9,Counting & Probability,Hard,22,Probability of divisibility conditions for random integer
+2023,Team,10,Counting & Probability,Hard,22,Two-color faces of truncated cube up to rotation
+2022,Sprint,1,General Math,Easy,9,Price difference under two sales tax rates
+2022,Sprint,2,Counting & Probability,Easy,9,Probability of choosing correct hotel room from clues
+2022,Sprint,3,General Math,Easy,9,Inchworm distance in one hour unit conversion
+2022,Sprint,4,Number Theory,Easy,9,Missing digit for divisibility by 9
+2022,Sprint,5,Geometry,Easy,9,Cylinder ratio of base area to lateral area
+2022,Sprint,6,Geometry,Easy,10,Triangle area from trisection points in right triangle
+2022,Sprint,7,General Math,Easy,10,Flow rate conversion to scientific notation
+2022,Sprint,8,Geometry,Easy,10,Altitude line of coordinate triangle y-intercept
+2022,Sprint,9,Geometry,Easy,10,Sum of rectangle areas under a line
+2022,Sprint,10,General Math,Easy,10,Fraction of tea left after repeated milk dilution
+2022,Sprint,11,Geometry,Medium,11,Quadrilateral angles with given relationships find largest
+2022,Sprint,12,Algebra,Medium,11,Least of consecutive odd integers with given mean
+2022,Sprint,13,Geometry,Medium,11,Circle circumference from sum of squared segment lengths
+2022,Sprint,14,Counting & Probability,Medium,11,Probability five coin flips form a palindrome
+2022,Sprint,15,Algebra,Medium,11,Trip distance from speed increases and time saved
+2022,Sprint,16,Number Theory,Medium,12,Find base matching a base nine number
+2022,Sprint,17,Algebra,Medium,12,Product of four sums of square roots
+2022,Sprint,18,Number Theory,Medium,12,Sum of reduced fractions with denominator 14 below 5
+2022,Sprint,19,Counting & Probability,Medium,12,Possible round counts in game with power-of-two scores
+2022,Sprint,20,Algebra,Medium,12,Sum of two nested radical expressions
+2022,Sprint,21,Geometry,Hard,13,Triangle of circle centers in segments of circumcircle
+2022,Sprint,22,Algebra,Hard,13,Sum of products over all subsets of unit fractions
+2022,Sprint,23,Number Theory,Hard,13,Count integers expressible in a two-variable product form
+2022,Sprint,24,Counting & Probability,Hard,13,Expected flips until three heads or four tails
+2022,Sprint,25,Number Theory,Hard,13,Least n with seven ordered sum-of-three-squares triples
+2022,Sprint,26,Number Theory,Hard,14,Probability sum of powers divisible by 35
+2022,Sprint,27,Algebra,Hard,14,Sum of max and min of a rational function
+2022,Sprint,28,Geometry,Hard,14,Product of perimeters of isosceles triangle with given area
+2022,Sprint,29,Counting & Probability,Hard,14,Probability round-robin teams share a win count
+2022,Sprint,30,Number Theory,Hard,14,Sum of divisors of n^7 minus n^3 for all n
+2022,Target,1,Number Theory,Easy,16,Distinct products of two single digits
+2022,Target,2,General Math,Easy,16,Fewest homework questions for lower percent than quiz
+2022,Target,3,Number Theory,Medium,17,Next year exactly three cicada cycles coincide
+2022,Target,4,Geometry,Medium,17,Solve dimension from surface area and volume of solid
+2022,Target,5,General Math,Medium,18,Lion and unicorn lying days logic puzzle
+2022,Target,6,General Math,Medium,18,Replace data value to multiply standard deviation
+2022,Target,7,Geometry,Hard,19,Distance between points on twelve rotated circles
+2022,Target,8,Counting & Probability,Hard,19,Probability some pair of seven dice sums to seven
+2022,Team,1,Counting & Probability,Easy,21,Distinct sums of three numbers from a set
+2022,Team,2,Geometry,Easy,21,Perimeter of rectangle inscribed in circle with area condition
+2022,Team,3,General Math,Easy,21,Difference between median and mean from bar graph
+2022,Team,4,General Math,Medium,21,Soap transfer so two bottles empty together
+2022,Team,5,Counting & Probability,Medium,21,Probability elevator is going down at first stop
+2022,Team,6,Counting & Probability,Medium,22,Probability random function satisfies composition identity
+2022,Team,7,Geometry,Medium,22,Fourth distance from interior point to rectangle vertices
+2022,Team,8,Counting & Probability,Hard,22,Probability random cord crossings produce a knot
+2022,Team,9,Geometry,Hard,22,Dodecahedron angle combination
+2022,Team,10,Counting & Probability,Hard,22,Probability cube coloring has adjacent same-color faces
+2021,Sprint,1,Algebra,Easy,11,Number doubled then decreased by 3 gives 99
+2021,Sprint,2,General Math,Easy,11,Max nonadjacent shaded unit squares in 17-square figure
+2021,Sprint,3,Counting & Probability,Easy,11,Probability random letter appears in word MATHEMATICS
+2021,Sprint,4,Number Theory,Easy,11,Two-digit numbers from digits 4 and 8 summed then divided
+2021,Sprint,5,General Math,Easy,11,Golf strokes below par needed to break four-round record
+2021,Sprint,6,Geometry,Easy,12,Area of triangle bounded by three lines
+2021,Sprint,7,Algebra,Easy,12,Decimal A.B equals average of its digits
+2021,Sprint,8,Geometry,Easy,12,Semicircle area on hypotenuse of right triangle
+2021,Sprint,9,Number Theory,Easy,12,Arithmetic sequence of integers whose product is prime
+2021,Sprint,10,Counting & Probability,Easy,12,Sandwich combinations avoiding ham with mayonnaise
+2021,Sprint,11,Geometry,Medium,13,Distance between cars driving northwest and southwest
+2021,Sprint,12,Algebra,Medium,13,Calculator button squares adds one then takes square root
+2021,Sprint,13,General Math,Medium,13,Five integers with given mean and unique mode possible medians
+2021,Sprint,14,Counting & Probability,Medium,13,Maximum students taking all three courses Venn diagram
+2021,Sprint,15,Algebra,Medium,13,Maximize product of bounded integers with fixed sum
+2021,Sprint,16,Algebra,Medium,14,Minimize linear expression given sum of absolute values
+2021,Sprint,17,Number Theory,Medium,14,Ordered positive integer triples with abc equal to 28
+2021,Sprint,18,Counting & Probability,Medium,14,Number of terms in expansion of trinomial to eighth power
+2021,Sprint,19,Number Theory,Medium,14,Count n to 2100 with cubic expression divisible by 7
+2021,Sprint,20,Number Theory,Medium,14,Sum of possible a+b+c+d given pairwise products
+2021,Sprint,21,Geometry,Hard,15,Maximum regions created by four lines through curved figure
+2021,Sprint,22,Number Theory,Hard,15,First time 36 percent of integers have leading digit 2
+2021,Sprint,23,Number Theory,Hard,15,Missing three-digit permutation given sum of the others
+2021,Sprint,24,Number Theory,Hard,15,Positive integer solutions of reciprocal equation sum of x values
+2021,Sprint,25,Number Theory,Hard,15,Probability divisor count is multiple of 3 in restricted set
+2021,Sprint,26,Algebra,Hard,16,Solve symmetric nonlinear system for x plus y plus 1
+2021,Sprint,27,Algebra,Hard,16,Four parameterized lines meeting at a single point
+2021,Sprint,28,Number Theory,Hard,16,Two coin collections with equal count and equal value
+2021,Sprint,29,Counting & Probability,Hard,16,Alphabetical rank of an arrangement of letters in FELINES
+2021,Sprint,30,Geometry,Hard,16,Greatest integer inradius given tangent point segment lengths
+2021,Target,1,General Math,Easy,18,Convert sprinter 100-meter time to kilometers per hour
+2021,Target,2,Geometry,Easy,18,Fraction of regular hexagon area in shaded trapezoid
+2021,Target,3,Algebra,Medium,19,Coins converted multiply total value by 7 find ratio
+2021,Target,4,Geometry,Medium,19,Weight of geometrically similar body scaled by height
+2021,Target,5,Number Theory,Medium,20,Least odd integer with four primes and divisor count condition
+2021,Target,6,General Math,Medium,20,Minimum seats at circular table guaranteeing groups sit together
+2021,Target,7,Geometry,Hard,21,Largest integer-sided triangle perimeter fitting inside circle
+2021,Target,8,General Math,Hard,21,Least difference in combined red button percentages
+2021,Team,1,Algebra,Easy,23,Maximize (a+b)(c-d) with distinct two-digit integers
+2021,Team,2,General Math,Easy,23,Minimum length of letter string under placement rules
+2021,Team,3,Number Theory,Easy,23,Count integers under 300 that are square times cube
+2021,Team,4,Number Theory,Medium,23,ISBN check digit valid digit pairs modulo 11
+2021,Team,5,Geometry,Medium,23,Smallest quadrilateral area on constrained odd lattice points
+2021,Team,6,Counting & Probability,Medium,24,Probability random compass walk ends due north of start
+2021,Team,7,Geometry,Medium,24,Area of regular octagon from two overlapping squares
+2021,Team,8,Algebra,Hard,24,Maximize product of frequencies in list with unique mode
+2021,Team,9,Number Theory,Hard,24,Cube face labels with perfect square vertex products
+2021,Team,10,Counting & Probability,Hard,24,Probability frog hopping 3 or 8 lands on 2020
+2019,Sprint,1,Counting & Probability,Easy,11,Percent probability student is not wearing sneakers
+2019,Sprint,2,General Math,Easy,11,Ten percent commission on three painting sales
+2019,Sprint,3,Algebra,Easy,11,Solve a squared equals twice a minus one
+2019,Sprint,4,Geometry,Easy,11,Weight of triangle from area ratio in square sheet
+2019,Sprint,5,Algebra,Easy,11,Solve 3 to the 18th equals x to the x
+2019,Sprint,6,General Math,Easy,12,Tip amount from sales tax and percentages
+2019,Sprint,7,General Math,Easy,12,Median of six scores with sixth equal to mean
+2019,Sprint,8,Algebra,Easy,12,Rational equation then evaluate related fraction
+2019,Sprint,9,Counting & Probability,Easy,12,Greatest number taking only German in language Venn diagram
+2019,Sprint,10,Counting & Probability,Easy,12,Five-step paths across hexagonal arrangement of tiles
+2019,Sprint,11,General Math,Medium,13,Self-referential true or false statements logic puzzle
+2019,Sprint,12,Counting & Probability,Medium,13,Distribute identical tokens into baskets with odd counts
+2019,Sprint,13,General Math,Medium,13,Minimum reviews for rounded 85 percent positive rating
+2019,Sprint,14,Geometry,Medium,13,Slope of line through origin bisecting square area
+2019,Sprint,15,Geometry,Medium,13,Volume of polyhedron with nine equal edges
+2019,Sprint,16,Counting & Probability,Medium,14,Probability four random points land in all four quadrants
+2019,Sprint,17,Algebra,Medium,14,When to swap sander discs wearing at different rates
+2019,Sprint,18,Number Theory,Medium,14,Median of integers 0 to 999 without digit 7
+2019,Sprint,19,Algebra,Medium,14,Count odd coefficients in expanded polynomial product
+2019,Sprint,20,Counting & Probability,Medium,14,Lock codes of three parts using single or paired buttons
+2019,Sprint,21,Number Theory,Hard,15,Values of n making reduced fraction numerator equal 2
+2019,Sprint,22,Geometry,Hard,15,Box volume from three face diagonal lengths
+2019,Sprint,23,Counting & Probability,Hard,15,Probability no card matches its counted position
+2019,Sprint,24,Counting & Probability,Hard,15,Probability random pentagon from 17 circle points contains center
+2019,Sprint,25,Number Theory,Hard,15,Game choosing multiplier so rounded product is an integer
+2019,Sprint,26,Number Theory,Hard,16,Iterated product of divisors of 10 as power of 10
+2019,Sprint,27,Geometry,Hard,16,Area of inner triangle with cevian ratio conditions
+2019,Sprint,28,Geometry,Hard,16,Heptagon area from two regular pentagons and golden ratio
+2019,Sprint,29,Number Theory,Hard,16,Integers up to 100000 with no single-digit prime factors
+2019,Sprint,30,Counting & Probability,Hard,16,Triangles formed by lines through 3 by 3 lattice points
+2019,Target,1,General Math,Easy,18,Property tax per 500 dollars or fraction thereof
+2019,Target,2,Geometry,Easy,18,Least sum of distinct integer distances to rectangle vertices
+2019,Target,3,Geometry,Medium,19,Shaded ring areas of four concentric circles
+2019,Target,4,Counting & Probability,Medium,19,Ten coin flips without five consecutive heads
+2019,Target,5,Algebra,Medium,20,Minimize sum of absolute values given product and integer squares
+2019,Target,6,Geometry,Medium,20,Annulus between circles circumscribing dodecagon and hexagon
+2019,Target,7,Geometry,Hard,21,Shortest seam path on truncated icosahedron soccer ball
+2019,Target,8,Number Theory,Hard,21,Largest set with squarefree GCDs greater than 1
+2019,Team,1,Number Theory,Easy,23,Exponents making prime factorization a perfect power
+2019,Team,2,Geometry,Easy,23,Least perimeter change after adding four unit squares
+2019,Team,3,Counting & Probability,Easy,23,Count referential integers where digit frequency equals digit
+2019,Team,4,Counting & Probability,Medium,23,Probability three 12-sided die rolls sum to 27
+2019,Team,5,General Math,Medium,23,Fill 5 by 5 magic square to find four entries
+2019,Team,6,Geometry,Medium,24,Chord length with two squares in circle area ratio 3
+2019,Team,7,Counting & Probability,Medium,24,Domino tilings of a 3 by 6 grid
+2019,Team,8,Number Theory,Hard,24,Ways to write triangular number as consecutive integer sums
+2019,Team,9,Geometry,Hard,24,Distance between right angle vertices after rotated overlap
+2019,Team,10,Number Theory,Hard,24,Digit sum of the sum of first 100 repunits
+2018,Sprint,1,General Math,Easy,11,Combined work rate of two people making 20 tutus
+2018,Sprint,2,Number Theory,Easy,11,Least two-digit base-three integer not divisible by 2
+2018,Sprint,3,Algebra,Easy,11,Solve percent equation involving P percent of k
+2018,Sprint,4,Geometry,Easy,11,Area ratio of corner triangle to pentagon in square
+2018,Sprint,5,Number Theory,Easy,11,Cryptarithm with four copies of API summing to IKA
+2018,Sprint,6,Algebra,Easy,12,Find coefficient so three lines are concurrent
+2018,Sprint,7,Counting & Probability,Easy,12,Probability Bob wins repeated two-coin-flip game
+2018,Sprint,8,Algebra,Easy,12,Geometric mean of middle terms of geometric sequence
+2018,Sprint,9,General Math,Easy,12,Greatest range of seven integers with given mean median mode
+2018,Sprint,10,Number Theory,Easy,12,Probability a random factor of 11088 is squarefree
+2018,Sprint,11,Geometry,Medium,13,Area of intercept triangle after dilation by negative factor
+2018,Sprint,12,General Math,Medium,13,Split cylindrical cookies into three equal-volume groups
+2018,Sprint,13,Algebra,Medium,13,Simplify sum of three fractions with 2018 denominators
+2018,Sprint,14,Counting & Probability,Medium,13,Probability four dice include a pair summing to 12
+2018,Sprint,15,Counting & Probability,Medium,13,Probability two randomly painted cubes match after rotation
+2018,Sprint,16,Geometry,Medium,14,Edge length of hexagonal prism with perpendicular space diagonals
+2018,Sprint,17,Counting & Probability,Medium,14,Probability exactly four primes drawn before the Joker
+2018,Sprint,18,Number Theory,Medium,14,Count ABCD so base-6 and base-10 values divisible by 5
+2018,Sprint,19,Geometry,Medium,14,Area of quadrilateral formed by midpoints in a square
+2018,Sprint,20,Counting & Probability,Medium,14,Probability random lattice walk ends within 6 meters
+2018,Sprint,21,Algebra,Hard,15,Greatest integer below ratio of sums of powers
+2018,Sprint,22,Algebra,Hard,15,Common linear factor of two cubic polynomials
+2018,Sprint,23,Counting & Probability,Hard,15,Probability player wins unfair coin two-point-lead game
+2018,Sprint,24,Geometry,Hard,15,Total area of infinite series of isosceles right triangles
+2018,Sprint,25,Algebra,Hard,15,Fourth term of geometric sequence given third term and sum
+2018,Sprint,26,Number Theory,Hard,16,Digit sum of one-seventh repeating expansion in base nine
+2018,Sprint,27,Geometry,Hard,16,Probability random line through point bisects shaded area
+2018,Sprint,28,Number Theory,Hard,16,Count six-digit distinct nonzero-digit integers divisible by 99
+2018,Sprint,29,Geometry,Hard,16,Sum of possible short bases of isosceles trapezoid
+2018,Sprint,30,Geometry,Hard,16,Area ratio from glide reflection line dividing triangle
+2018,Target,1,Algebra,Easy,18,Slope of perpendicular line through a given point
+2018,Target,2,Algebra,Easy,18,Maximize product ratio for list with halved or doubled terms
+2018,Target,3,Algebra,Medium,19,Evaluate expression with square-root sum and difference operations
+2018,Target,4,General Math,Medium,19,Most negative entries in grid with positive 2x2 sums
+2018,Target,5,Number Theory,Medium,20,Greatest three-digit sum in cryptarithm AB plus CD
+2018,Target,6,Geometry,Medium,20,Probability absolute value graph meets circle at two points
+2018,Target,7,Number Theory,Hard,21,Count 4-up numbers between 400 and 600 inclusive
+2018,Target,8,Geometry,Hard,21,Distance from fold corner to intersection of folded arcs
+2018,Team,1,General Math,Easy,23,Maximum range of six integers with given mode median mean
+2018,Team,2,Number Theory,Easy,23,Least sum of three distinct factors with product 90
+2018,Team,3,Algebra,Easy,23,Maximize value of coins with fixed total weight
+2018,Team,4,Geometry,Medium,23,Percent of semicircle shaded around two inscribed circles
+2018,Team,5,Geometry,Medium,23,Distance between longest sides of coordinate parallelogram
+2018,Team,6,Geometry,Medium,24,Radius of hollow sphere covered by Earth volume layer
+2018,Team,7,General Math,Medium,24,Next time 24-hour clock hands are 51 degrees apart
+2018,Team,8,Counting & Probability,Hard,24,Probability origin lies in circle with random chord diameter
+2018,Team,9,Number Theory,Hard,24,Greatest difference of pairwise GCF sums of consecutive sets
+2018,Team,10,Counting & Probability,Hard,24,Probability Piper is last to roll doubles and escape

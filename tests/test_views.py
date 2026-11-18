@@ -69,3 +69,15 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(html.count('class="answer-row"'), 8)
         self.assertIn("Pair 4", html)
         self.assertIn("2 points each", html)
+
+    def test_local_pdf_round_uses_zoom_to_width_embed(self):
+        html = render_test_page(
+            user={"email": "student@example.com"},
+            year=2025,
+            round_name="Sprint",
+            resource={"url": "/past_paper/sample.pdf#page=11"},
+            answer_keys=[{"question_number": number, "answer": "hidden", "points": 1} for number in range(1, 31)],
+            reference_links=[],
+        )
+
+        self.assertIn('src="/past_paper/sample.pdf#page=11&amp;zoom=page-width"', html)

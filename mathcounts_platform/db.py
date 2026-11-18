@@ -68,8 +68,44 @@ def migrate(conn):
           points INTEGER NOT NULL,
           is_correct INTEGER NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS generated_problems (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          user_id INTEGER NOT NULL REFERENCES users(id),
+          source_year INTEGER NOT NULL,
+          source_round TEXT NOT NULL,
+          source_question_number INTEGER NOT NULL,
+          subject TEXT NOT NULL,
+          difficulty TEXT NOT NULL,
+          problem_text TEXT NOT NULL,
+          answer TEXT NOT NULL,
+          unit TEXT NOT NULL DEFAULT '',
+          solution TEXT NOT NULL DEFAULT '',
+          submitted_answer TEXT,
+          is_correct INTEGER,
+          checked_at TEXT,
+          status TEXT NOT NULL DEFAULT 'ready',
+          error TEXT,
+          created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+
+        CREATE TABLE IF NOT EXISTS problem_attempts (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          user_id INTEGER NOT NULL REFERENCES users(id),
+          year INTEGER NOT NULL,
+          round TEXT NOT NULL,
+          question_number INTEGER NOT NULL,
+          submitted_answer TEXT NOT NULL,
+          is_correct INTEGER NOT NULL,
+          submitted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
         """
     )
+    generated_columns = {row[1] for row in conn.execute("PRAGMA table_info(generated_problems)")}
+    if "status" not in generated_columns:
+        conn.execute("ALTER TABLE generated_problems ADD COLUMN status TEXT NOT NULL DEFAULT 'ready'")
+    if "error" not in generated_columns:
+        conn.execute("ALTER TABLE generated_problems ADD COLUMN error TEXT")
     conn.commit()
 
 
@@ -248,6 +284,175 @@ def get_attempt_answers(conn, attempt_id):
         """,
         (int(attempt_id),),
     ).fetchall()
+
+
+def get_all_answer_keys(conn):
+    return conn.execute(
+        """
+        SELECT * FROM answer_keys
+        ORDER BY year DESC, round, question_number
+        """
+    ).fetchall()
+
+
+def create_problem_attempt(conn, user_id, year, round_name, question_number, submitted_answer, is_correct):
+    cursor = conn.execute(
+        """
+        INSERT INTO problem_attempts (
+          user_id, year, round, question_number, submitted_answer, is_correct
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+        """,
+        (int(user_id), int(year), round_name, int(question_number), str(submitted_answer), int(bool(is_correct))),
+    )
+    conn.commit()
+    return cursor.lastrowid
+
+
+def get_problem_attempt(conn, user_id, problem_attempt_id):
+    return conn.execute(
+        """
+        SELECT * FROM problem_attempts
+        WHERE id = ? AND user_id = ?
+        """,
+        (int(problem_attempt_id), int(user_id)),
+    ).fetchone()
+
+
+def get_problem_attempts_for_user(conn, user_id):
+    return conn.execute(
+        """
+        SELECT * FROM problem_attempts
+        WHERE user_id = ?
+        ORDER BY submitted_at, id
+        """,
+        (int(user_id),),
+    ).fetchall()
+
+
+def create_generated_problem(conn, user_id, source, generated):
+    cursor = conn.execute(
+        """
+        INSERT INTO generated_problems (
+          user_id, source_year, source_round, source_question_number, subject, difficulty,
+          problem_text, answer, unit, solution
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        (
+            int(user_id),
+            int(source["year"]),
+            source["round"],
+            int(source["question_number"]),
+            source["subject"],
+            source["difficulty"],
+            generated["problem"],
+            generated["answer"],
+            generated.get("unit", ""),
+            generated.get("solution", ""),
+        ),
+    )
+    conn.commit()
+    return cursor.lastrowid
+
+
+def create_pending_generated_problem(conn, user_id, source):
+    cursor = conn.execute(
+        """
+        INSERT INTO generated_problems (
+          user_id, source_year, source_round, source_question_number, subject, difficulty,
+          problem_text, answer, status
+        )
+        VALUES (?, ?, ?, ?, ?, ?, '', '', 'pending')
+        """,
+        (
+            int(user_id),
+            int(source["year"]),
+            source["round"],
+            int(source["question_number"]),
+            source["subject"],
+            source["difficulty"],
+        ),
+    )
+    conn.commit()
+    return cursor.lastrowid
+
+
+def complete_generated_problem(conn, generated_id, generated):
+    conn.execute(
+        """
+        UPDATE generated_problems
+        SET problem_text = ?, answer = ?, unit = ?, solution = ?, status = 'ready', error = NULL
+        WHERE id = ? AND status = 'pending'
+        """,
+        (
+            generated["problem"],
+            generated["answer"],
+            generated.get("unit", ""),
+            generated.get("solution", ""),
+            int(generated_id),
+        ),
+    )
+    conn.commit()
+
+
+def fail_generated_problem(conn, generated_id, message):
+    conn.execute(
+        """
+        UPDATE generated_problems
+        SET status = 'failed', error = ?
+        WHERE id = ? AND status = 'pending'
+        """,
+        (str(message), int(generated_id)),
+    )
+    conn.commit()
+
+
+def expire_stale_generations(conn, max_age_minutes=15):
+    """Fail jobs left pending too long, e.g. because the server restarted mid-generation."""
+    conn.execute(
+        """
+        UPDATE generated_problems
+        SET status = 'failed', error = 'Generation timed out. Please try again.'
+        WHERE status = 'pending' AND created_at < datetime('now', ?)
+        """,
+        (f"-{int(max_age_minutes)} minutes",),
+    )
+    conn.commit()
+
+
+def get_generated_problem(conn, user_id, generated_id):
+    return conn.execute(
+        """
+        SELECT * FROM generated_problems
+        WHERE id = ? AND user_id = ?
+        """,
+        (int(generated_id), int(user_id)),
+    ).fetchone()
+
+
+def get_generated_problems_for_user(conn, user_id, limit=100):
+    return conn.execute(
+        """
+        SELECT * FROM generated_problems
+        WHERE user_id = ?
+        ORDER BY created_at DESC, id DESC
+        LIMIT ?
+        """,
+        (int(user_id), int(limit)),
+    ).fetchall()
+
+
+def record_generated_check(conn, user_id, generated_id, submitted_answer, is_correct):
+    conn.execute(
+        """
+        UPDATE generated_problems
+        SET submitted_answer = ?, is_correct = ?, checked_at = CURRENT_TIMESTAMP
+        WHERE id = ? AND user_id = ?
+        """,
+        (str(submitted_answer), int(bool(is_correct)), int(generated_id), int(user_id)),
+    )
+    conn.commit()
 
 
 def get_user_for_session(conn, token):
